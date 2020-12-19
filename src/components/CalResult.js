@@ -65,7 +65,7 @@ const CalResult = ({
             variant="h3"
             color="textPrimary"
           >
-            {value && value.toFixed(4)}
+            {value && value.toFixed(3)}
           </Typography>
           <Typography
             variant="h5"
