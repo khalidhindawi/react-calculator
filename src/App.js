@@ -21,7 +21,7 @@ const useStyles = makeStyles(() => ({
 const App = () => {
   const classes = useStyles();
   const [unitType, setUnitType] = React.useState(false);
-  const [leaksNumber, setLeaksNumber] = React.useState(0);
+  const [leaksNumber, setLeaksNumber] = React.useState(null);
 
   const handleChangeLeaksNumber = React.useCallback(event => {
     if (event.target.value) {
@@ -61,12 +61,6 @@ const App = () => {
         flexDirection="column"
         justifyContent="center"
       >
-        <Typography
-          variant="h2"
-          className={classes.heading}
-        >
-          {unitType ? "ENGLISH" : "METRIC"}
-        </Typography>
         <Grid
           container
           spacing={3}

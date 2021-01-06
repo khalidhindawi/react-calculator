@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 const CalInputs = ({
   className,
-  leaksNumber = 0,
+  leaksNumber,
   unitType,
   handleChangeLeaksNumber = () => {},
   handleChangeUnitType = () => {},
@@ -62,13 +62,13 @@ const CalInputs = ({
           <TextField
             label="Leaks Number"
             style={{ margin: 8 }}
-            placeholder="Placeholder"
+            placeholder="Input the number"
             margin="normal"
             InputLabelProps={{
               shrink: true,
             }}
             className={classes.input}
-            type="number"
+            type="text"
             value={leaksNumber}
             onChange={handleChangeLeaksNumber}
           />
