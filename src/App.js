@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Grid, makeStyles, Typography } from '@material-ui/core';
+import { Box, Container, Grid, makeStyles } from '@material-ui/core';
 
 import CalResult from './components/CalResult';
 import CalInputs from './components/CalInputs';

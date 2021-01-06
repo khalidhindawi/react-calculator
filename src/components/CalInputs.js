@@ -2,13 +2,12 @@ import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
-  FormControlLabel,
+  Button,
   Box,
   Card,
   Typography,
   makeStyles,
   TextField,
-  Switch
 } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
@@ -83,10 +82,12 @@ const CalInputs = ({
         >
           Units
         </Typography>
-        <FormControlLabel
-          control={<Switch checked={unitType} onChange={handleChangeUnitType} name="unitType" />}
-          label={unitType ? "English" : "Metric"}
-        />
+        <Button>
+          English
+        </Button>
+        <Button>
+          Metric
+        </Button>
       </Box>
     </Card>
   );
