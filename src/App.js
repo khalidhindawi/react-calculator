@@ -20,7 +20,7 @@ const useStyles = makeStyles(() => ({
 
 const App = () => {
   const classes = useStyles();
-  const [unitType, setUnitType] = React.useState(false);
+  const [unitType, setUnitType] = React.useState("english");
   const [leaksNumber, setLeaksNumber] = React.useState('');
 
   const handleChangeLeaksNumber = React.useCallback(event => {
@@ -31,14 +31,13 @@ const App = () => {
     }
   }, []);
 
-  const handleChangeUnitType = React.useCallback(value => {
-    // setUnitType(event.target.checked)
-    setUnitType(value)
+  const handleChangeUnitType = React.useCallback(event => {
+    setUnitType(event.target.value)
   }, []);
 
   const getWaterValue = React.useCallback(() => {
     if (leaksNumber !== '') {
-      return unitType ? leaksNumber * 0.255 : leaksNumber * 0.00093;
+      return unitType === 'english' ? leaksNumber * 0.255 : leaksNumber * 0.00093;
     } else {
       return;
     }
@@ -94,7 +93,7 @@ const App = () => {
             <CalResult
               title="Water"
               value={getWaterValue()}
-              unit={unitType ? "Million gallons" : "Million m³"}
+              unit={unitType === 'english' ? "Million gallons" : "Million m³"}
               avatar={<OpacityIcon/>}
               avatarStyle={{background: '#ff9a0f'}}
             />

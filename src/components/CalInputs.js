@@ -2,7 +2,10 @@ import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
-  Button,
+  FormControl,
+  FormControlLabel,
+  Radio,
+  RadioGroup,
   Box,
   Card,
   Typography,
@@ -82,20 +85,12 @@ const CalInputs = ({
         >
           Units
         </Typography>
-        <Button
-          onClick={() => handleChangeUnitType(false)}
-          disabled={!unitType}
-          color="primary"
-        >
-          English
-        </Button>
-        <Button
-          onClick={() => handleChangeUnitType(true)}
-          disabled={unitType}
-          color="primary"
-        >
-          Metric
-        </Button>
+        <FormControl component="fieldset">
+          <RadioGroup aria-label="unit" name="unit" value={unitType} onChange={handleChangeUnitType}>
+            <FormControlLabel value="english" control={<Radio />} label="English" />
+            <FormControlLabel value="metric" control={<Radio />} label="Metric" />
+          </RadioGroup>
+        </FormControl>
       </Box>
     </Card>
   );
@@ -104,7 +99,7 @@ const CalInputs = ({
 CalInputs.propTypes = {
   className: PropTypes.string,
   leaksNumber: PropTypes.string,
-  unitType: PropTypes.bool,
+  unitType: PropTypes.string,
   handleChangeLeaksNumber: PropTypes.func,
   handleChangeUnitType: PropTypes.func
 };
