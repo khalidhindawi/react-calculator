@@ -10,7 +10,7 @@ import EcoIcon from '@material-ui/icons/Eco';
 
 const useStyles = makeStyles(() => ({
   root: {
-    background: '#1a237e',
+    background: '#fafafa',
     minHeight: '100vh'
   },
   heading: {
@@ -27,7 +27,7 @@ const App = () => {
     if (event.target.value) {
       setLeaksNumber(parseFloat(event.target.value))
     } else {
-      setLeaksNumber(0)
+      setLeaksNumber(null)
     }
   }, []);
 
@@ -87,7 +87,7 @@ const App = () => {
               value={getWaterValue()}
               unit={unitType ? "Million gallons" : "Million m³"}
               avatar={<OpacityIcon/>}
-              avatarStyle={{background: '#0d47a1'}}
+              avatarStyle={{background: '#ff9a0f'}}
             />
           </Grid>
           <Grid
@@ -101,7 +101,7 @@ const App = () => {
               value={getEnergyValue()}
               unit="MWH"
               avatar={<OfflineBoltIcon/>}
-              avatarStyle={{background: '#e91e63'}}
+              avatarStyle={{background: '#0ea8c3'}}
             />
           </Grid>
           <Grid
@@ -115,7 +115,7 @@ const App = () => {
               value={getEnergyValue()}
               unit="Metric tons"
               avatar={<EcoIcon/>}
-              avatarStyle={{background: '#388e3c'}}
+              avatarStyle={{background: '#72b646'}}
             />
           </Grid>
         </Grid>
