@@ -85,12 +85,16 @@ const CalInputs = ({
         <Button
           onClick={() => handleChangeUnitType(false)}
           disabled={!unitType}
+          color="primary"
+          variant="contained"
         >
           English
         </Button>
         <Button
           onClick={() => handleChangeUnitType(true)}
           disabled={unitType}
+          color="primary"
+          variant="contained"
         >
           Metric
         </Button>
