@@ -86,7 +86,6 @@ const CalInputs = ({
           onClick={() => handleChangeUnitType(false)}
           disabled={!unitType}
           color="primary"
-          variant="contained"
         >
           English
         </Button>
@@ -94,7 +93,6 @@ const CalInputs = ({
           onClick={() => handleChangeUnitType(true)}
           disabled={unitType}
           color="primary"
-          variant="contained"
         >
           Metric
         </Button>
