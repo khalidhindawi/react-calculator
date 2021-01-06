@@ -37,7 +37,7 @@ const App = () => {
   }, []);
 
   const getWaterValue = React.useCallback(() => {
-    if (leaksNumber !== null) {
+    if (leaksNumber !== '') {
       return unitType ? leaksNumber * 0.255 : leaksNumber * 0.00093;
     } else {
       return;
@@ -45,7 +45,7 @@ const App = () => {
   }, [leaksNumber, unitType]);
 
   const getEnergyValue = React.useCallback(() => {
-    if (leaksNumber !== null) {
+    if (leaksNumber !== '') {
       return leaksNumber * 0.604;
     } else {
       return;
@@ -53,7 +53,7 @@ const App = () => {
   }, [leaksNumber]);
 
   const getCO2Value = React.useCallback(() => {
-    if (leaksNumber !== null) {
+    if (leaksNumber !== '') {
       return leaksNumber * 0.404;
     } else {
       return;
