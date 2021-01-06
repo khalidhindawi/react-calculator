@@ -21,18 +21,19 @@ const useStyles = makeStyles(() => ({
 const App = () => {
   const classes = useStyles();
   const [unitType, setUnitType] = React.useState(false);
-  const [leaksNumber, setLeaksNumber] = React.useState(null);
+  const [leaksNumber, setLeaksNumber] = React.useState('');
 
   const handleChangeLeaksNumber = React.useCallback(event => {
     if (event.target.value) {
       setLeaksNumber(parseFloat(event.target.value))
     } else {
-      setLeaksNumber(null)
+      setLeaksNumber('')
     }
   }, []);
 
-  const handleChangeUnitType = React.useCallback(event => {
-    setUnitType(event.target.checked)
+  const handleChangeUnitType = React.useCallback(value => {
+    // setUnitType(event.target.checked)
+    setUnitType(value)
   }, []);
 
   const getWaterValue = React.useCallback(() => {
@@ -78,7 +79,7 @@ const App = () => {
             xs={12}
           >
             <CalInputs
-              leaksNumber={leaksNumber}
+              leaksNumber={leaksNumber.toString()}
               handleChangeLeaksNumber={handleChangeLeaksNumber}
               handleChangeUnitType={handleChangeUnitType}
               unitType={unitType}

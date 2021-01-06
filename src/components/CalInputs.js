@@ -82,10 +82,16 @@ const CalInputs = ({
         >
           Units
         </Typography>
-        <Button>
+        <Button
+          onClick={() => handleChangeUnitType(false)}
+          disabled={!unitType}
+        >
           English
         </Button>
-        <Button>
+        <Button
+          onClick={() => handleChangeUnitType(true)}
+          disabled={unitType}
+        >
           Metric
         </Button>
       </Box>
@@ -95,7 +101,7 @@ const CalInputs = ({
 
 CalInputs.propTypes = {
   className: PropTypes.string,
-  leaksNumber: PropTypes.number,
+  leaksNumber: PropTypes.string,
   unitType: PropTypes.bool,
   handleChangeLeaksNumber: PropTypes.func,
   handleChangeUnitType: PropTypes.func
