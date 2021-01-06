@@ -51,6 +51,14 @@ const App = () => {
     }
   }, [leaksNumber]);
 
+  const getCO2Value = React.useCallback(() => {
+    if (leaksNumber !== null) {
+      return leaksNumber * 0.404;
+    } else {
+      return;
+    }
+  }, [leaksNumber]);
+
   return (
     <Container
       maxWidth={false}
@@ -112,7 +120,7 @@ const App = () => {
           >
             <CalResult
               title="CO2 Emissions"
-              value={getEnergyValue()}
+              value={getCO2Value()}
               unit="Metric tons"
               avatar={<EcoIcon/>}
               avatarStyle={{background: '#72b646'}}
