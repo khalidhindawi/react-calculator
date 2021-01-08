@@ -37,7 +37,7 @@ const App = () => {
 
   const getWaterValue = React.useCallback(() => {
     if (leaksNumber !== '') {
-      return unitType === 'english' ? leaksNumber * 0.255 : leaksNumber * 0.00093;
+      return unitType === 'english' ? (leaksNumber * 0.255).toFixed(3) : (leaksNumber * 0.00093).toFixed(3);
     } else {
       return;
     }
@@ -45,7 +45,7 @@ const App = () => {
 
   const getEnergyValue = React.useCallback(() => {
     if (leaksNumber !== '') {
-      return leaksNumber * 0.604;
+      return (leaksNumber * 0.604).toFixed(0);
     } else {
       return;
     }
@@ -53,7 +53,7 @@ const App = () => {
 
   const getCO2Value = React.useCallback(() => {
     if (leaksNumber !== '') {
-      return leaksNumber * 0.404;
+      return (leaksNumber * 0.404).toFixed(0);
     } else {
       return;
     }
@@ -94,7 +94,7 @@ const App = () => {
               title="Water"
               value={getWaterValue()}
               unit={unitType === 'english' ? "Million gallons" : "Million m³"}
-              avatar={<OpacityIcon/>}
+              avatar={<OpacityIcon style={{fontSize: 32}} />}
               avatarStyle={{background: '#ff9a0f'}}
             />
           </Grid>
@@ -108,7 +108,7 @@ const App = () => {
               title="Energy"
               value={getEnergyValue()}
               unit="MWH"
-              avatar={<OfflineBoltIcon/>}
+              avatar={<OfflineBoltIcon style={{fontSize: 32}} />}
               avatarStyle={{background: '#0ea8c3'}}
             />
           </Grid>
@@ -122,7 +122,7 @@ const App = () => {
               title="CO2 Emissions"
               value={getCO2Value()}
               unit="Metric tons"
-              avatar={<EcoIcon/>}
+              avatar={<EcoIcon style={{fontSize: 32}} />}
               avatarStyle={{background: '#72b646'}}
             />
           </Grid>

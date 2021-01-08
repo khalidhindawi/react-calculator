@@ -29,6 +29,9 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.secondary.contrastText,
     height: 48,
     width: 48
+  },
+  resize: {
+    fontSize: 20
   }
 }));
 
@@ -62,12 +65,16 @@ const CalInputs = ({
           flexWrap="wrap"
         >
           <TextField
-            label="Leaks Number"
             style={{ margin: 8 }}
             placeholder="Input the number"
             margin="normal"
             InputLabelProps={{
               shrink: true,
+            }}
+            InputProps={{
+              classes: {
+                input: classes.resize
+              }
             }}
             className={classes.input}
             type="text"

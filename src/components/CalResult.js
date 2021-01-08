@@ -26,8 +26,8 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     backgroundColor: theme.palette.secondary.main,
     color: theme.palette.secondary.contrastText,
-    height: 48,
-    width: 48
+    height: 50,
+    width: 50
   }
 }));
 
@@ -49,9 +49,9 @@ const CalResult = ({
     >
       <Box flexGrow={1}>
         <Typography
-          component="h5"
+          component="h6"
           gutterBottom
-          variant="h5"
+          variant="h6"
           color="textSecondary"
         >
           {title}
@@ -65,10 +65,10 @@ const CalResult = ({
             variant="h3"
             color="textPrimary"
           >
-            {value && value.toFixed(3)}
+            {value && value}
           </Typography>
           <Typography
-            variant="h5"
+            variant="h6"
             color="textPrimary"
             className={classes.unit}
           >
