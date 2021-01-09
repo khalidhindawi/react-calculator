@@ -17,7 +17,8 @@ const useStyles = makeStyles(() => ({
     color: '#e8eaf6'
   },
   fontRoboto: {
-    fontFamily: '"Roboto", sans-serif'
+    fontFamily: '"Roboto", sans-serif',
+    color: '#ccc'
   }
 }))
 
@@ -86,9 +87,6 @@ const App = () => {
               handleChangeUnitType={handleChangeUnitType}
               unitType={unitType}
             />
-            <Typography variant="p" className={classes.fontRoboto}>
-              Assumptions: On average one leak wastes 0.255 million gallons (0.00093 million m³) of water per year, 0.604 MWH energy per year, and 0.404 metric tons of CO2 per year.
-            </Typography>
           </Grid>
           <Grid
             item
@@ -133,6 +131,11 @@ const App = () => {
             />
           </Grid>
         </Grid>
+        <Box display="flex" alignItems="center" justifyContent="center" my={2}>
+          <Typography variant="p" className={classes.fontRoboto}>
+            Assumptions: On average one leak wastes 0.255 million gallons (0.00093 million m³) of water per year, 0.604 MWH energy per year, and 0.404 metric tons of CO2 per year.
+          </Typography>
+        </Box>
       </Box>
     </Container>
   );
