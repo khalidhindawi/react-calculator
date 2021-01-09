@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Grid, makeStyles } from '@material-ui/core';
+import { Box, Container, Grid, makeStyles, Typography } from '@material-ui/core';
 
 import CalResult from './components/CalResult';
 import CalInputs from './components/CalInputs';
@@ -15,6 +15,9 @@ const useStyles = makeStyles(() => ({
   },
   heading: {
     color: '#e8eaf6'
+  },
+  fontRoboto: {
+    fontFamily: '"Roboto", sans-serif'
   }
 }))
 
@@ -83,6 +86,9 @@ const App = () => {
               handleChangeUnitType={handleChangeUnitType}
               unitType={unitType}
             />
+            <Typography variant="p" className={classes.fontRoboto}>
+              Assumptions: On average one leak wastes 0.255 million gallons (0.00093 million m³) of water per year, 0.604 MWH energy per year, and 0.404 metric tons of CO2 per year.
+            </Typography>
           </Grid>
           <Grid
             item
